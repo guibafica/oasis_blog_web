@@ -9,8 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)'
+        white: '#FFFFFF',
+        black: '#2B2C34',
+        light_gray_1: '#EFF0F3',
+        light_gray_2: '#E4E5E9',
+        gray: '#C0C0C0',
+        dark_gray: '#9A9A9A',
+        yellow: '#FFC344'
+      },
+      fontFamily: {
+        plus_jakarta_sans: ['var(--font-plus_jakarta_sans)', 'sans-serif']
       }
     }
   },
