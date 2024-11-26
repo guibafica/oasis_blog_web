@@ -15,7 +15,11 @@ const config: Config = {
         light_gray_2: '#E4E5E9',
         gray: '#C0C0C0',
         dark_gray: '#9A9A9A',
-        yellow: '#FFC344'
+        yellow: '#FFC344',
+        yellow_hover: '#FFAE03',
+        disabled_border: '#EAEAEC',
+        disabled_background: '#F1F2F3',
+        disabled_text: '#B0B0B0'
       },
       fontFamily: {
         plus_jakarta_sans: ['var(--font-plus_jakarta_sans)', 'sans-serif']

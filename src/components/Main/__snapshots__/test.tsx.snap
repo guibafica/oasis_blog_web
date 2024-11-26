@@ -2,7 +2,9 @@
 
 exports[`<Main /> should render the heading 1`] = `
 <main>
-  <h1>
+  <h1
+    class="text-yellow"
+  >
     OASIS
   </h1>
 </main>
