@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge'
 
-interface IButtonProps {
+export type IButtonProps = {
   children: string | React.ReactNode
   className?: string
   onClick?: () => void

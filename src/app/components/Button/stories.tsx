@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
-import { Button } from '.'
+import { Button, IButtonProps } from '.'
 
 export default {
   title: 'Button',
@@ -10,15 +10,12 @@ export default {
   }
 } as Meta
 
-export const Default: StoryObj = {
-  args: {
-    children: 'Enviar mensagem'
-  }
-}
+export const Default: StoryFn<IButtonProps> = (args) => (
+  <Button {...args}>CLICK ME</Button>
+)
 
-export const Disabled: StoryObj = {
-  args: {
-    children: 'Desabilitado',
-    isDisabled: true
-  }
-}
+export const Disabled: StoryFn<IButtonProps> = (args) => (
+  <Button {...args} isDisabled>
+    Desabilitado
+  </Button>
+)
