@@ -20,9 +20,6 @@ const config: Config = {
         disabled_border: '#EAEAEC',
         disabled_background: '#F1F2F3',
         disabled_text: '#B0B0B0'
-      },
-      fontFamily: {
-        plus_jakarta_sans: ['var(--font-plus_jakarta_sans)', 'sans-serif']
       }
     }
   },
