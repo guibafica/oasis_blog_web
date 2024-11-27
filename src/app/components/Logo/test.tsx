@@ -10,4 +10,12 @@ describe('<Logo />', () => {
       width: '175'
     })
   })
+
+  it('should render the logo without text', () => {
+    render(<Logo hasText={false} />)
+
+    const logo = screen.getByLabelText(/oasis/i).querySelector('.hidden')
+
+    expect(logo).toBeInTheDocument()
+  })
 })

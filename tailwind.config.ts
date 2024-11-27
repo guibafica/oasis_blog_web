@@ -9,17 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        white: '#FFFFFF',
-        black: '#2B2C34',
-        light_gray_1: '#EFF0F3',
-        light_gray_2: '#E4E5E9',
-        gray: '#C0C0C0',
-        dark_gray: '#9A9A9A',
-        yellow: '#FFC344',
-        yellow_hover: '#FFAE03',
-        disabled_border: '#EAEAEC',
-        disabled_background: '#F1F2F3',
-        disabled_text: '#B0B0B0'
+        white: 'rgba(var(--white))',
+        black: 'rgba(var(--black))',
+        light_gray_1: 'rgba(var(--light_gray_1))',
+        light_gray_2: 'rgba(var(--light_gray_2))',
+        gray: 'rgba(var(--gray))',
+        dark_gray: 'rgba(var(--dark_gray))',
+        yellow: 'rgba(var(--yellow))',
+        yellow_hover: 'rgba(var(--yellow_hover))',
+        disabled_border: 'rgba(var(--disabled_border))',
+        disabled_background: 'rgba(var(--disabled_background))',
+        disabled_text: 'rgba(var(--disabled_text))'
       }
     }
   },

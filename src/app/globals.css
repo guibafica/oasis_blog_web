@@ -30,6 +30,18 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --white: 255, 255, 255;
+  --black: 43, 44, 52;
+  --light_gray_1: 239, 240, 243;
+  --light_gray_2: 228, 229, 233;
+  --gray: 192, 192, 192;
+  --dark_gray: 154, 154, 154;
+  --yellow: 255, 195, 68;
+  --yellow_hover: 255, 174, 3;
+  --disabled_border: 234, 234, 236;
+  --disabled_background: 241, 242, 243;
+  --disabled_text: 176, 176, 176;
 }
 
 body {
