@@ -12,7 +12,7 @@ export function CategoryTitleAndLink({
   LinkTitle
 }: ICategoryTitleAndLinkProps) {
   return (
-    <header className="flex flex-row items-center justify-between">
+    <header className="flex flex-col items-start gap-4 md:gap-0 md:flex-row md:items-center justify-between">
       <div className="flex items-center justify-end gap-[10px]">
         <Typography variant="sub_heading_1">{CategoryTitle}</Typography>
 

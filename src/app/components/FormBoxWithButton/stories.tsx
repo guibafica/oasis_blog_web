@@ -1,14 +1,14 @@
 import { Meta, StoryFn } from '@storybook/react'
 
-import { {{pascalCase name}} } from '.'
+import { FormBoxWithButton } from '.'
 
 export default {
-  title: '{{pascalCase name}}',
-  component: {{pascalCase name}}
+  title: 'FormBoxWithButton',
+  component: FormBoxWithButton
 } as Meta
 
 export const Default: StoryFn = () => (
-  <{{pascalCase name}} />
+  <FormBoxWithButton buttonText="Inscrever-se" />
 )
 
 Default.parameters = {
