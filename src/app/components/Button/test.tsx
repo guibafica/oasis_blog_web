@@ -50,8 +50,7 @@ describe('<Button />', () => {
 
     const button = screen.getByRole('button', { name: /Loading.../i })
 
-    expect(button).toHaveAttribute('data-isLoading', 'true')
-    expect(button).toHaveClass('data-[isLoading=true]:cursor-progress')
+    expect(button).toHaveClass('cursor-progress')
   })
 
   it('should not trigger click event when loading', () => {

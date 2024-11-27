@@ -1,10 +1,16 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 
-import { CategoryTitleAndLink } from '.'
+import { CategoryTitleAndLink, ICategoryTitleAndLinkProps } from '.'
 
 export default {
   title: 'CategoryTitleAndLink',
   component: CategoryTitleAndLink
 } as Meta
 
-export const Default: StoryObj = {}
+export const Default: StoryFn<ICategoryTitleAndLinkProps> = (args) => (
+  <CategoryTitleAndLink
+    {...args}
+    CategoryTitle="Desenvolvimento Mobile"
+    LinkTitle="Ver Todos Artigos"
+  />
+)
