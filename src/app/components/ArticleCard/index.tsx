@@ -11,7 +11,7 @@ export type IArticleCard = {
   topicImageUrl: string
   creatorImageUrl: string
   creatorName: string
-  created_at: Date
+  created_at: Date | string
 }
 
 export function ArticleCard({
@@ -24,11 +24,13 @@ export function ArticleCard({
   dayjs.extend(relativeTime)
   dayjs.locale('pt-br')
 
-  const formattedDate = dayjs(created_at).format('MMM DD, YYYY')
-  const timeAgo = dayjs().to(dayjs(created_at)).replace('há', '')
+  const formattedDate = dayjs(new Date(created_at)).format('MMM DD, YYYY')
+  const timeAgo = dayjs()
+    .to(dayjs(new Date(created_at)))
+    .replace('há', '')
 
   return (
-    <main className="w-[300px] h-[425px] p-5 bg-white rounded-xl flex flex-col items-center justify-between transition-all cursor-pointer hover:scale-105 hover:shadow-md">
+    <main className="border border-light_gray_1 md:border-0 w-[300px] h-[425px] p-5 bg-white rounded-xl flex flex-col items-center justify-between transition-all cursor-pointer hover:scale-105 hover:shadow-md">
       <div>
         <Image
           width={260}

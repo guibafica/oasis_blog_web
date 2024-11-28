@@ -27,12 +27,29 @@
   src: url('/fonts/plus-jakarta-sans-v8-latin-700.woff2') format('woff2');
 }
 
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);
+  border-radius: 4px;
+  border: 2px solid #f0f0f0;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  scrollbar-width: thin;
+  scrollbar-color: #ffc344 #f0f0f0;
 
   &::before,
   &::after {
@@ -54,4 +71,8 @@
 
 body {
   font-family: 'Plus Jakarta Sans', 'Open Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }

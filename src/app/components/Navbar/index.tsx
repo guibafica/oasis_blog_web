@@ -15,15 +15,15 @@ export function Navbar() {
 
   const LinksLi = ({ className }: ILinksLiProps) => (
     <div className={className}>
-      <Link href="#" text="Home" />
-      <Link href="#" text="Categorias" />
-      <Link href="#" text="Contato" />
+      <Link href="#home" text="Home" />
+      <Link href="#categories" text="Categorias" />
+      <Link href="#contact" text="Contato" />
     </div>
   )
 
   return (
     <>
-      <menu className="w-screen flex items-center justify-center shadow-sm bg-light_gray_1 py-6">
+      <menu className="fixed top-0 z-10 w-screen flex items-center justify-center shadow-sm bg-light_gray_1 py-6">
         <div className="pl-[calc(3.2rem/2)] pr-[calc(3.2rem/2)] w-full max-w-7xl flex flex-row items-center justify-between">
           <Menu
             className="cursor-pointer md:hidden"

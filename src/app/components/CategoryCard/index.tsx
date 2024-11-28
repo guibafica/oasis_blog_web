@@ -7,17 +7,20 @@ export type ICategoryCardProps = {
   variant?: 'white' | 'yellow'
   text: string
   iconPath: string
+  hrefSection?: string
 }
 
 export function CategoryCard({
   variant = 'white',
   iconPath,
-  text
+  text,
+  hrefSection = '#'
 }: ICategoryCardProps) {
   return (
-    <main
+    <a
+      href={hrefSection}
       className={twMerge(
-        'w-[220px] h-[280px] shadow-md rounded-lg flex flex-col items-start justify-center p-8 gap-8',
+        'w-[220px] h-[280px] cursor-pointer shadow-sm hover:shadow-md hover:scale-105 transition-all rounded-lg flex flex-col items-start justify-center p-8 gap-8',
         variant === 'white' && 'bg-white',
         variant === 'yellow' && 'bg-yellow'
       )}
@@ -32,6 +35,6 @@ export function CategoryCard({
       >
         {text}
       </Typography>
-    </main>
+    </a>
   )
 }

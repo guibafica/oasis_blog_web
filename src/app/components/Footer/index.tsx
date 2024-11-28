@@ -69,9 +69,13 @@ export function Footer() {
                   </Typography>
 
                   {col.options.map((option) => (
-                    <Typography key={option} variant="paragraph_2">
-                      {option}
-                    </Typography>
+                    <a
+                      href={`#${option.toLowerCase().replaceAll(' ', '')}`}
+                      key={option}
+                      className="transition-all hover:underline hover:scale-105"
+                    >
+                      <Typography variant="paragraph_2">{option}</Typography>
+                    </a>
                   ))}
                 </div>
               ))}

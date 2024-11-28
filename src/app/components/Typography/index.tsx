@@ -23,13 +23,14 @@ export function Typography({
   return (
     <h1
       className={twMerge(
-        variant === 'heading_1' && 'text-[64px] font-bold',
-        variant === 'sub_heading_1' && 'text-2xl font-bold',
-        variant === 'sub_heading_2' && 'text-xl font-bold',
-        variant === 'paragraph_1' && 'text-xl font-normal',
-        variant === 'paragraph_2' && 'text-lg font-normal',
-        variant === 'paragraph_3_semi_bold' && 'text-base font-semibold',
-        variant === 'paragraph_4' && 'text-sm font-normal',
+        variant === 'heading_1' && 'text-[64px] font-bold leading-none',
+        variant === 'sub_heading_1' && 'text-2xl font-bold leading-none',
+        variant === 'sub_heading_2' && 'text-xl font-bold leading-none',
+        variant === 'paragraph_1' && 'text-xl font-normal leading-none',
+        variant === 'paragraph_2' && 'text-lg font-normal leading-none',
+        variant === 'paragraph_3_semi_bold' &&
+          'text-base font-semibold leading-none',
+        variant === 'paragraph_4' && 'text-sm font-normal leading-none',
         color === 'black' && 'text-black',
         color === 'white' && 'text-white',
         color === 'dark_gray' && 'text-dark_gray',

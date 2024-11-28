@@ -1,11 +1,17 @@
+import { twMerge } from 'tailwind-merge'
+
 export type IContainerProps = {
   children: React.ReactNode
+  className?: string
+  id?: string
 }
 
-export function Container({ children }: IContainerProps) {
+export function Container({ children, className, id = '' }: IContainerProps) {
   return (
-    <div className="max-w-7xl ml-auto mr-auto pl-[calc(3.2rem/2)] pr-[calc(3.2rem/2)]">
-      {children}
-    </div>
+    <section id={id} className={twMerge('w-full', className)}>
+      <div className="max-w-7xl ml-auto mr-auto pl-[calc(3.2rem/2)] pr-[calc(3.2rem/2)]">
+        {children}
+      </div>
+    </section>
   )
 }

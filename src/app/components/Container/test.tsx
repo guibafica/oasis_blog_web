@@ -10,8 +10,6 @@ describe('<Container />', () => {
       </Container>
     )
 
-    expect(container.firstChild).toHaveClass(
-      'pl-[calc(3.2rem/2)] pr-[calc(3.2rem/2)]'
-    )
+    expect(container.firstChild).toHaveClass('w-full')
   })
 })
