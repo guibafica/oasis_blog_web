@@ -12,7 +12,7 @@ export function Newsletter() {
         Inscreva-se Para Receber Últimas Atualizações
       </Typography>
 
-      <Typography className="mt-2" color="gray" variant="paragraph_1">
+      <Typography className="mt-5" color="gray" variant="paragraph_1">
         Subscribe to newsletter and never miss the new post every week.
       </Typography>
 

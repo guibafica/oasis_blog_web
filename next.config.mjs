@@ -31,6 +31,18 @@ const nextConfig = {
         hostname: 'coodesh.com',
         port: '',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.monitoratec.com.br',
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'blog.bagaggio.com.br',
+        port: '',
+        pathname: '/**'
       }
     ]
   }

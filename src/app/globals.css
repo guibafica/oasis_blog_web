@@ -27,6 +27,56 @@
   src: url('/fonts/plus-jakarta-sans-v8-latin-700.woff2') format('woff2');
 }
 
+/* merriweather */
+@font-face {
+  font-display: swap;
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/merriweather-v30-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/merriweather-v30-latin-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/merriweather-v30-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/fonts/merriweather-v30-latin-700italic.woff2') format('woff2');
+}
+
+/* work-sans-regular */
+@font-face {
+  font-display: swap;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/work-sans-v19-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/work-sans-v19-latin-600.woff2') format('woff2');
+}
+
 *::-webkit-scrollbar {
   width: 8px;
 }

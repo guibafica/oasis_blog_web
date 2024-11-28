@@ -7,6 +7,10 @@ const config: Config = {
     './src/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
+    fontFamily: {
+      merriweather: ['"Merriweather"', 'sans-serif'],
+      workSans: ['"Work Sans"', 'sans-serif']
+    },
     extend: {
       colors: {
         white: 'rgba(var(--white))',

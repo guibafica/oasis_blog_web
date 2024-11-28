@@ -32,7 +32,7 @@ export function AllArticle({ allArticles }: IArticleTemplateProps) {
 
         <Container className="pt-12 pb-16 mt-20 bg-white w-screen">
           <div className="w-full flex flex-col items-center justify-center">
-            <div className="w-2/3">
+            <div className="w-full md:w-2/3">
               <Typography
                 className="text-base text-center"
                 variant="sub_heading_2"
