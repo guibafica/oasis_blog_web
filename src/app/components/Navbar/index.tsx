@@ -23,36 +23,38 @@ export function Navbar() {
 
   return (
     <>
-      <menu className="bg-light_gray_1 shadow-sm py-6 flex items-center justify-between relative md:justify-end">
-        <Menu
-          className="cursor-pointer md:hidden"
-          color="rgba(var(--black))"
-          aria-label="abrir menu"
-          onClick={() => setIsOpen(true)}
-        />
+      <menu className="w-screen flex items-center justify-center shadow-sm bg-light_gray_1 py-6">
+        <div className="pl-[calc(3.2rem/2)] pr-[calc(3.2rem/2)] w-full max-w-7xl flex flex-row items-center justify-between">
+          <Menu
+            className="cursor-pointer md:hidden"
+            color="rgba(var(--black))"
+            aria-label="abrir menu"
+            onClick={() => setIsOpen(true)}
+          />
 
-        <div className="absolute left-1/2 -translate-x-1/2 md:top-5 md:left-0 md:translate-x-0">
-          <Logo hasText={false} />
-        </div>
+          <div className="absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0">
+            <Logo hasText={false} />
+          </div>
 
-        <div className="flex items-center gap-12">
-          <LinksLi className="hidden md:flex items-center gap-12" />
+          <div className="flex items-center gap-12">
+            <LinksLi className="hidden md:flex items-center gap-12" />
 
-          <div className="flex items-center gap-2">
-            <Image
-              className="cursor-pointer"
-              aria-label="buscar"
-              width={14}
-              height={14}
-              alt="Search Svg"
-              src="/search.svg"
-            />
+            <div className="flex items-center gap-2">
+              <Image
+                className="cursor-pointer"
+                aria-label="buscar"
+                width={14}
+                height={14}
+                alt="Search Svg"
+                src="/search.svg"
+              />
 
-            <input
-              type="text"
-              placeholder="Procurar"
-              className="hidden md:flex placeholder:text-xl placeholder:font-bold placeholder:text-black text-xl font-bold text-black w-32 bg-transparent border-none outline-none"
-            />
+              <input
+                type="text"
+                placeholder="Procurar"
+                className="hidden md:flex placeholder:text-xl placeholder:font-bold placeholder:text-black text-xl font-bold text-black w-32 bg-transparent border-none outline-none"
+              />
+            </div>
           </div>
         </div>
       </menu>

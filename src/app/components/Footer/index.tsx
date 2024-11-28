@@ -21,7 +21,7 @@ export function Footer() {
 
   return (
     <div className="overflow-hidden">
-      <footer className="w-full bg-light_gray_1 flex items-center justify-center py-16">
+      <footer className="w-full bg-light_gray_2 flex items-center justify-center py-16">
         <div className="gap-10 w-full h-full flex flex-col items-center justify-center">
           <div className="w-full flex flex-col md:flex-row px-5 md:px-0 md:items-start items-center justify-between">
             <div className="flex flex-col gap-5">
