@@ -21,13 +21,13 @@ export function Footer() {
 
   return (
     <div className="overflow-hidden">
-      <footer className="w-screen bg-light_gray_1 flex items-center justify-center py-16">
-        <div className="gap-10 w-full h-full max-w-7xl flex flex-col items-center justify-center">
+      <footer className="w-full bg-light_gray_2 flex items-center justify-center py-16">
+        <div className="gap-10 w-full h-full flex flex-col items-center justify-center">
           <div className="w-full flex flex-col md:flex-row px-5 md:px-0 md:items-start items-center justify-between">
-            <div className="w-auto md:w-72 flex flex-col gap-5">
+            <div className="flex flex-col gap-5">
               <Logo />
 
-              <Typography variant="paragraph_2">
+              <Typography className="w-auto md:w-72" variant="paragraph_2">
                 Conectando você às últimas novidades e tendências. 🌐
               </Typography>
 
@@ -58,21 +58,22 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center mt-10 md:flex-row md:items-start md:mt-0 gap-24">
+            <div className="md:1/3 flex flex-col items-center mt-10 md:flex-row md:items-start md:mt-0 gap-24">
               {footerMenu.map((col) => (
-                <>
-                  <div className="flex flex-col items-center md:items-start gap-5">
-                    <Typography className="mb-[5px]" variant="sub_heading_2">
-                      {col.title}
-                    </Typography>
+                <div
+                  key={col.title}
+                  className="flex flex-col items-center md:items-start gap-5"
+                >
+                  <Typography className="mb-[5px]" variant="sub_heading_2">
+                    {col.title}
+                  </Typography>
 
-                    {col.options.map((option) => (
-                      <Typography key={option} variant="paragraph_2">
-                        {option}
-                      </Typography>
-                    ))}
-                  </div>
-                </>
+                  {col.options.map((option) => (
+                    <Typography key={option} variant="paragraph_2">
+                      {option}
+                    </Typography>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
