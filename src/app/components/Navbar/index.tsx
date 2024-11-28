@@ -10,7 +10,11 @@ type ILinksLiProps = {
   className?: string
 }
 
-export function Navbar() {
+type INavbarProps = {
+  onChangeText?: (text: string) => void
+}
+
+export function Navbar({ onChangeText = () => {} }: INavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const LinksLi = ({ className }: ILinksLiProps) => (
@@ -39,7 +43,7 @@ export function Navbar() {
           <div className="flex items-center gap-12">
             <LinksLi className="hidden md:flex items-center gap-12" />
 
-            <div className="flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-2">
               <Image
                 className="cursor-pointer"
                 aria-label="buscar"
@@ -52,7 +56,8 @@ export function Navbar() {
               <input
                 type="text"
                 placeholder="Procurar"
-                className="hidden md:flex placeholder:text-xl placeholder:font-bold placeholder:text-black text-xl font-bold text-black w-32 bg-transparent border-none outline-none"
+                className="placeholder:text-xl placeholder:font-bold placeholder:text-black text-xl font-bold text-black w-32 bg-transparent border-none outline-none"
+                onChange={(e) => onChangeText(e.target.value)}
               />
             </div>
           </div>

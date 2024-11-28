@@ -19,6 +19,18 @@ const nextConfig = {
         hostname: 'i.ytimg.com',
         port: '',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'arquivo.devmedia.com.br',
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'coodesh.com',
+        port: '',
+        pathname: '/**'
       }
     ]
   }

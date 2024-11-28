@@ -1,13 +1,26 @@
 import { render, screen } from '@testing-library/react'
 
 import { items } from '../../app/components/CategoryCard/mock'
-import { featured } from '../../app/components/ArticleCard/mock'
+import {
+  featured,
+  css,
+  javascript,
+  reactjs
+} from '../../app/components/ArticleCard/mock'
 
 import { Home } from '.'
 
 describe('<Home />', () => {
   it('should render navbar and footer', () => {
-    render(<Home categories={items} featured={featured} />)
+    render(
+      <Home
+        categories={items}
+        featured={featured}
+        css={css}
+        javascript={javascript}
+        reactjs={reactjs}
+      />
+    )
 
     // Navbar
     expect(screen.getByLabelText(/abrir menu/i)).toBeInTheDocument()
@@ -20,7 +33,15 @@ describe('<Home />', () => {
   })
 
   it('should render section elements', () => {
-    render(<Home categories={items} featured={featured} />)
+    render(
+      <Home
+        categories={items}
+        featured={featured}
+        css={css}
+        javascript={javascript}
+        reactjs={reactjs}
+      />
+    )
 
     // Category Card
     expect(
@@ -33,7 +54,7 @@ describe('<Home />', () => {
     ).toBeInTheDocument()
 
     // All cards
-    expect(screen.getAllByText(/css/i)).toHaveLength(11)
+    expect(screen.getAllByText(/css/i)).toHaveLength(8)
 
     // Newsletter
     expect(

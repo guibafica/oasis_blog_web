@@ -32,13 +32,16 @@ export function ArticleCard({
   return (
     <main className="border border-light_gray_1 md:border-0 w-[300px] h-[425px] p-5 bg-white rounded-xl flex flex-col items-center justify-between transition-all cursor-pointer hover:scale-105 hover:shadow-md">
       <div>
-        <Image
-          width={260}
-          height={198}
-          alt="Article Image"
-          className="rounded-xl"
-          src={topicImageUrl}
-        />
+        <div className="h-[198px] w-[260px] bg-black rounded-xl flex items-center justify-center">
+          <Image
+            width={260}
+            height={198}
+            alt="Article Image"
+            className="rounded-xl"
+            src={topicImageUrl}
+            style={{ objectFit: 'cover' }}
+          />
+        </div>
 
         <Typography className="mt-6" variant="sub_heading_2">
           {topic}

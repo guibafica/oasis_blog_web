@@ -1,5 +1,6 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { twMerge } from 'tailwind-merge'
 import Image from 'next/image'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -12,6 +13,7 @@ import { FormBoxWithButton } from '../../app/components/FormBoxWithButton'
 import { CategoryTitleAndLink } from '../../app/components/CategoryTitleAndLink'
 import { ArticleCard, IArticleCard } from '../../app/components/ArticleCard'
 import { Button } from '../../app/components/Button'
+import { Newsletter } from '../../app/components/Newsletter'
 import {
   ICategoryCardProps,
   CategoryCard
@@ -20,9 +22,47 @@ import {
 export type IHomeTemplateProps = {
   categories: ICategoryCardProps[]
   featured: IArticleCard[]
+  css: IArticleCard[]
+  javascript: IArticleCard[]
+  reactjs: IArticleCard[]
 }
 
-export function Home({ categories, featured }: IHomeTemplateProps) {
+type IArticles = {
+  featured: IArticleCard[]
+  css: IArticleCard[]
+  javascript: IArticleCard[]
+  reactjs: IArticleCard[]
+}
+
+export function Home({
+  categories,
+  featured,
+  css,
+  javascript,
+  reactjs
+}: IHomeTemplateProps) {
+  const [searchInput, setSearchInput] = useState('')
+
+  const allArticles: IArticles = {
+    featured,
+    css,
+    javascript,
+    reactjs
+  }
+
+  // Agrupo todos os dados de artigos, para filtrar igualmente de acordo
+  // com o que o usuário digita
+  const filteredByInputSearch = Object.fromEntries(
+    Object.entries(allArticles).map(([category, items]) => [
+      category,
+      searchInput.length > 0
+        ? items.filter((item) =>
+            item.topic.toLowerCase().includes(searchInput.toLowerCase())
+          )
+        : items
+    ])
+  )
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -35,9 +75,18 @@ export function Home({ categories, featured }: IHomeTemplateProps) {
   return (
     <>
       <section className="bg-light_gray_1 overflow-hidden">
-        <Navbar />
+        <Navbar onChangeText={(e) => setSearchInput(e)} />
 
-        <Container id="home" className="bg-light_gray_1 mt-20 w-screen">
+        <Container id="home" className=" bg-light_gray_1 mt-20 w-screen">
+          <Image
+            data-aos="zoom-out-left"
+            className="absolute left-0 right-0 bottom-5"
+            width={1342}
+            height={839}
+            alt="Home dots"
+            src="/home-dots.svg"
+          />
+
           <div className="relative w-full h-auto mt-4 gap-4 lg:gap-0 lg:mt-0 lg:h-[calc(100vh-100px)] flex flex-col-reverse lg:flex-row items-center justify-between">
             <div
               data-aos="zoom-out-right"
@@ -111,17 +160,30 @@ export function Home({ categories, featured }: IHomeTemplateProps) {
               LinkTitle="Ver Todos Artigos"
             />
 
-            <section className="flex flex-wrap justify-center sm:justify-between mt-8 gap-4 xl:gap-0">
-              {featured?.map((featuredItem, featuredItemIndex) => (
-                <ArticleCard
-                  key={`${featuredItemIndex} - ${featuredItem?.topic}`}
-                  created_at={featuredItem?.created_at}
-                  creatorImageUrl={featuredItem?.creatorImageUrl}
-                  creatorName={featuredItem?.creatorName}
-                  topic={featuredItem?.topic}
-                  topicImageUrl={featuredItem?.topicImageUrl}
-                />
-              ))}
+            <section
+              className={twMerge(
+                'flex flex-wrap justify-center sm:justify-between mt-8 gap-4 xl:gap-0',
+                searchInput.length > 0 && 'sm:justify-start'
+              )}
+            >
+              {filteredByInputSearch?.featured?.map(
+                (featuredItem, featuredItemIndex) => (
+                  <ArticleCard
+                    key={`${featuredItemIndex} - ${featuredItem?.topic}`}
+                    created_at={featuredItem?.created_at}
+                    creatorImageUrl={featuredItem?.creatorImageUrl}
+                    creatorName={featuredItem?.creatorName}
+                    topic={featuredItem?.topic}
+                    topicImageUrl={featuredItem?.topicImageUrl}
+                  />
+                )
+              )}
+
+              {filteredByInputSearch?.featured?.length === 0 && (
+                <Typography variant="paragraph_4">
+                  Nenhum item encontrado, tente limpar sua busca
+                </Typography>
+              )}
             </section>
           </Container>
 
@@ -131,17 +193,28 @@ export function Home({ categories, featured }: IHomeTemplateProps) {
               LinkTitle="Ver Todos Artigos"
             />
 
-            <section className="flex flex-wrap justify-center sm:justify-between mt-8 gap-4 xl:gap-0">
-              {featured?.map((featuredItem, featuredItemIndex) => (
+            <section
+              className={twMerge(
+                'flex flex-wrap justify-center sm:justify-between mt-8 gap-4 xl:gap-0',
+                searchInput.length > 0 && 'sm:justify-start'
+              )}
+            >
+              {filteredByInputSearch?.css?.map((item, itemIndex) => (
                 <ArticleCard
-                  key={`${featuredItemIndex} - ${featuredItem?.topic}`}
-                  created_at={featuredItem?.created_at}
-                  creatorImageUrl={featuredItem?.creatorImageUrl}
-                  creatorName={featuredItem?.creatorName}
-                  topic={featuredItem?.topic}
-                  topicImageUrl={featuredItem?.topicImageUrl}
+                  key={`${itemIndex} - ${item?.topic}`}
+                  created_at={item?.created_at}
+                  creatorImageUrl={item?.creatorImageUrl}
+                  creatorName={item?.creatorName}
+                  topic={item?.topic}
+                  topicImageUrl={item?.topicImageUrl}
                 />
               ))}
+
+              {filteredByInputSearch?.css?.length === 0 && (
+                <Typography variant="paragraph_4">
+                  Nenhum item encontrado, tente limpar sua busca
+                </Typography>
+              )}
             </section>
           </Container>
 
@@ -151,17 +224,30 @@ export function Home({ categories, featured }: IHomeTemplateProps) {
               LinkTitle="Ver Todos Artigos"
             />
 
-            <section className="flex flex-wrap justify-center sm:justify-between mt-8 gap-4 xl:gap-0">
-              {featured?.map((featuredItem, featuredItemIndex) => (
-                <ArticleCard
-                  key={`${featuredItemIndex} - ${featuredItem?.topic}`}
-                  created_at={featuredItem?.created_at}
-                  creatorImageUrl={featuredItem?.creatorImageUrl}
-                  creatorName={featuredItem?.creatorName}
-                  topic={featuredItem?.topic}
-                  topicImageUrl={featuredItem?.topicImageUrl}
-                />
-              ))}
+            <section
+              className={twMerge(
+                'flex flex-wrap justify-center sm:justify-between mt-8 gap-4 xl:gap-0',
+                searchInput.length > 0 && 'sm:justify-start'
+              )}
+            >
+              {filteredByInputSearch?.javascript?.map(
+                (javascript, javascriptIndex) => (
+                  <ArticleCard
+                    key={`${javascriptIndex} - ${javascript?.topic}`}
+                    created_at={javascript?.created_at}
+                    creatorImageUrl={javascript?.creatorImageUrl}
+                    creatorName={javascript?.creatorName}
+                    topic={javascript?.topic}
+                    topicImageUrl={javascript?.topicImageUrl}
+                  />
+                )
+              )}
+
+              {filteredByInputSearch?.javascript?.length === 0 && (
+                <Typography variant="paragraph_4">
+                  Nenhum item encontrado, tente limpar sua busca
+                </Typography>
+              )}
             </section>
           </Container>
 
@@ -171,17 +257,28 @@ export function Home({ categories, featured }: IHomeTemplateProps) {
               LinkTitle="Ver Todos Artigos"
             />
 
-            <section className="flex flex-wrap justify-center sm:justify-between mt-8 gap-4 xl:gap-0">
-              {featured?.map((featuredItem, featuredItemIndex) => (
+            <section
+              className={twMerge(
+                'flex flex-wrap justify-center sm:justify-between mt-8 gap-4 xl:gap-0',
+                searchInput.length > 0 && 'sm:justify-start'
+              )}
+            >
+              {filteredByInputSearch?.reactjs?.map((reactjs, reactjsIndex) => (
                 <ArticleCard
-                  key={`${featuredItemIndex} - ${featuredItem?.topic}`}
-                  created_at={featuredItem?.created_at}
-                  creatorImageUrl={featuredItem?.creatorImageUrl}
-                  creatorName={featuredItem?.creatorName}
-                  topic={featuredItem?.topic}
-                  topicImageUrl={featuredItem?.topicImageUrl}
+                  key={`${reactjsIndex} - ${reactjs?.topic}`}
+                  created_at={reactjs?.created_at}
+                  creatorImageUrl={reactjs?.creatorImageUrl}
+                  creatorName={reactjs?.creatorName}
+                  topic={reactjs?.topic}
+                  topicImageUrl={reactjs?.topicImageUrl}
                 />
               ))}
+
+              {filteredByInputSearch?.reactjs?.length === 0 && (
+                <Typography variant="paragraph_4">
+                  Nenhum item encontrado, tente limpar sua busca
+                </Typography>
+              )}
             </section>
           </Container>
 
@@ -193,27 +290,7 @@ export function Home({ categories, featured }: IHomeTemplateProps) {
 
       {/* Newsletter */}
       <Container className="bg-light_gray_1 py-14">
-        <div className="flex flex-col items-center justify-center">
-          <Image
-            width={130}
-            height={130}
-            alt="Mail box svg"
-            src="/mail-box.svg"
-          />
-
-          <Typography className="mt-8" variant="sub_heading_2">
-            Inscreva-se Para Receber Últimas Atualizações
-          </Typography>
-
-          <Typography className="mt-2" color="gray" variant="paragraph_1">
-            Subscribe to newsletter and never miss the new post every week.
-          </Typography>
-
-          <FormBoxWithButton
-            className="w-full md:w-auto mt-8"
-            buttonText="Inscrever-se"
-          />
-        </div>
+        <Newsletter />
       </Container>
 
       <section id="contact" className="bg-light_gray_2">
