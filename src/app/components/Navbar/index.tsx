@@ -23,7 +23,7 @@ export function Navbar() {
 
   return (
     <>
-      <menu className="bg-light_gray_1 shadow-sm py-6 px-4 flex items-center justify-between relative md:justify-end">
+      <menu className="bg-light_gray_1 shadow-sm py-6 flex items-center justify-between relative md:justify-end">
         <Menu
           className="cursor-pointer md:hidden"
           color="rgba(var(--black))"
@@ -31,7 +31,7 @@ export function Navbar() {
           onClick={() => setIsOpen(true)}
         />
 
-        <div className="absolute left-1/2 -translate-x-1/2 md:top-5 md:left-4 md:translate-x-0">
+        <div className="absolute left-1/2 -translate-x-1/2 md:top-5 md:left-0 md:translate-x-0">
           <Logo hasText={false} />
         </div>
 
