@@ -20,9 +20,13 @@ export function Navbar({ onChangeText = () => {} }: INavbarProps) {
 
   const LinksLi = ({ className }: ILinksLiProps) => (
     <div className={className}>
-      <Link href="/#home" text="Home" />
-      <Link href="/#categories" text="Categorias" />
-      <Link href="/contact" text="Contato" />
+      <Link href="/#home" text="Home" onCLick={() => setIsOpen(false)} />
+      <Link
+        href="/#categories"
+        text="Categorias"
+        onCLick={() => setIsOpen(false)}
+      />
+      <Link href="/contact" text="Contato" onCLick={() => setIsOpen(false)} />
     </div>
   )
 
