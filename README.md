@@ -42,6 +42,8 @@ Aplicação web a qual permitir que os usuários visualizem posts, naveguem entr
 - husky: Ferramenta para configurar ganchos de Git e automatizar tarefas no fluxo de trabalho.
 - tailwindcss: Framework CSS utilitário para estilização rápida e consistente.
 - plop: Ferramenta para criar geradores de código personalizados e automatizar tarefas repetitivas.
+- graphql: Linguagem de consulta para APIs que permite buscar apenas os dados necessários.
+- apollo: Plataforma para integrar e gerenciar GraphQL em clientes e servidores.
 
 ## Notas
 
