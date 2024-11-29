@@ -15,7 +15,7 @@ export function NotFound() {
         <Navbar />
 
         <Container className="bg-white flex items-center justify-center mt-20 h-screen w-screen">
-          <div className="w-full md:w-[816px] h-[472px] rounded-2xl bg-yellow flex flex-col items-center justify-center">
+          <div className="w-full text-center p-10 md:w-[816px] h-[472px] rounded-2xl bg-yellow flex flex-col items-center justify-center">
             <Typography variant="heading_1" className="text-9xl" color="white">
               404
             </Typography>
