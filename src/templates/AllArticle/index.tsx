@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
+import { useRouter } from 'next/router'
 
 import { Navbar } from '../../app/components/Navbar'
 import { Container } from '../../app/components/Container'
@@ -16,7 +17,7 @@ export type IArticleTemplateProps = {
 export function AllArticle({ allArticles }: IArticleTemplateProps) {
   const [searchInput, setSearchInput] = useState('')
 
-  const temp_category = 'Tailwind'
+  const router = useRouter()
 
   const filteredBySearch =
     searchInput.length > 0
@@ -44,7 +45,7 @@ export function AllArticle({ allArticles }: IArticleTemplateProps) {
                 className="text-[48px] text-center "
                 variant="heading_1"
               >
-                {`Encontre todos os nossos blogs para a categoria "${temp_category}"`}
+                {`Encontre todos os nossos blogs para a categoria "${router?.query?.slug}"`}
               </Typography>
 
               <Typography

@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { Menu, X } from 'lucide-react'
@@ -19,9 +20,9 @@ export function Navbar({ onChangeText = () => {} }: INavbarProps) {
 
   const LinksLi = ({ className }: ILinksLiProps) => (
     <div className={className}>
-      <Link href="#home" text="Home" />
-      <Link href="#categories" text="Categorias" />
-      <Link href="#contact" text="Contato" />
+      <Link href="/#home" text="Home" />
+      <Link href="/#categories" text="Categorias" />
+      <Link href="/contact" text="Contato" />
     </div>
   )
 
@@ -37,7 +38,9 @@ export function Navbar({ onChangeText = () => {} }: INavbarProps) {
           />
 
           <div className="absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0">
-            <Logo hasText={false} />
+            <NextLink href="/" passHref>
+              <Logo hasText={false} />
+            </NextLink>
           </div>
 
           <div className="flex items-center gap-12">

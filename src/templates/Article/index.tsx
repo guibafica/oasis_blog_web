@@ -1,16 +1,24 @@
 import Image from 'next/image'
 import dayjs from 'dayjs'
-import 'dayjs/locale/pt-br'
+import { twMerge } from 'tailwind-merge'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useRouter } from 'next/router'
 
 import { Navbar } from '../../app/components/Navbar'
 import { Container } from '../../app/components/Container'
 import { Footer } from '../../app/components/Footer'
 import { Newsletter } from '../../app/components/Newsletter'
 import { Typography } from '../../app/components/Typography'
+import { allArticles } from '../../app/components/ArticleCard/mock'
+import { useCallback } from 'react'
+
+type IHandleChangeArticleProps = {
+  direction: 'previous' | 'next'
+}
 
 export function Article() {
-  const temp_title =
-    'O impacto da tecnologia no local de trabalho: como a tecnologia está mudando'
+  const router = useRouter()
+  const slug = String(router?.query?.slug || '')
 
   const texts = [
     {
@@ -40,6 +48,25 @@ export function Article() {
     }
   ]
 
+  const articleFound = allArticles.find((article) => article.topic === slug)
+  const articleIndex = allArticles.findIndex(
+    (article) => article.topic === slug
+  )
+
+  const handleChangeArticle = useCallback(
+    ({ direction }: IHandleChangeArticleProps) => {
+      let newIndex = articleIndex
+
+      if (direction === 'next') newIndex = newIndex + 1
+      if (direction === 'previous') newIndex = newIndex - 1
+
+      const topic = allArticles[newIndex]?.topic
+
+      if (topic) router.push({ pathname: `/article/${topic}` })
+    },
+    [router, articleIndex]
+  )
+
   return (
     <>
       <section className="bg-light_gray_1 overflow-hidden">
@@ -57,7 +84,7 @@ export function Article() {
                   className="text-4xl mt-4"
                   variant="paragraph_3_semi_bold"
                 >
-                  {temp_title}
+                  {slug}
                 </Typography>
 
                 <div className="mt-5 flex flex-row items-center justify-start">
@@ -87,7 +114,10 @@ export function Article() {
                   height={462}
                   className="rounded-xl mt-8"
                   alt="Blog post image one"
-                  src="https://www.monitoratec.com.br/blog/wp-content/uploads/2021/06/AdobeStock_310079315-min.jpeg"
+                  src={
+                    articleFound?.topicImageUrl ||
+                    'https://www.monitoratec.com.br/blog/wp-content/uploads/2021/06/AdobeStock_310079315-min.jpeg'
+                  }
                 />
 
                 <Typography
@@ -217,6 +247,26 @@ export function Article() {
           </div>
         </Container>
       </section>
+
+      <div
+        onClick={() => handleChangeArticle({ direction: 'previous' })}
+        className={twMerge(
+          'fixed cursor-pointer left-5 top-1/2 -translate-y-1/2 transition-all hover:scale-110',
+          articleIndex === 0 && 'hidden'
+        )}
+      >
+        <ChevronLeft size={40} color="rgba(var(--black))" />
+      </div>
+
+      <div
+        onClick={() => handleChangeArticle({ direction: 'next' })}
+        className={twMerge(
+          'fixed cursor-pointer right-5 top-1/2 -translate-y-1/2 transition-all hover:scale-110',
+          articleIndex === allArticles.length - 1 && 'hidden'
+        )}
+      >
+        <ChevronRight size={40} color="rgba(var(--black))" />
+      </div>
 
       {/* Newsletter */}
       <Container className="bg-light_gray_1 py-14">

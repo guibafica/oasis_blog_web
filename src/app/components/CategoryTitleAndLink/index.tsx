@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 
 import { Typography } from '../Typography'
@@ -25,17 +26,19 @@ export function CategoryTitleAndLink({
         />
       </div>
 
-      <div className="flex items-center justify-end gap-3 cursor-pointer border-b-2 border-transparent transition-all hover:border-black">
-        <Typography variant="sub_heading_2">{LinkTitle}</Typography>
+      <Link href={`/all-article/${CategoryTitle.toLowerCase()}`} passHref>
+        <div className="flex items-center justify-end gap-3 cursor-pointer border-b-2 border-transparent transition-all hover:border-black">
+          <Typography variant="sub_heading_2">{LinkTitle}</Typography>
 
-        <Image
-          className="mt-1"
-          width={8}
-          height={16}
-          alt="Chevron right Svg"
-          src="/chevron-right.svg"
-        />
-      </div>
+          <Image
+            className="mt-1"
+            width={8}
+            height={16}
+            alt="Chevron right Svg"
+            src="/chevron-right.svg"
+          />
+        </div>
+      </Link>
     </header>
   )
 }

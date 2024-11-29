@@ -9,7 +9,7 @@ module.exports = {
     '!src/types/**',
     '!src/**/stories.tsx'
   ],
-  setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts', '<rootDir>/setupTests.js'],
   modulePaths: ['<rootDir>/src/'],
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
