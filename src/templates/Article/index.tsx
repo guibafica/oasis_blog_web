@@ -62,7 +62,7 @@ export function Article() {
 
       const topic = allArticles[newIndex]?.topic
 
-      if (topic) router.push({ pathname: `/article/${topic}` })
+      if (topic) router?.push({ pathname: `/article/${topic}` })
     },
     [router, articleIndex]
   )
