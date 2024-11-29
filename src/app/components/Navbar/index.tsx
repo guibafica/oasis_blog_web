@@ -70,7 +70,7 @@ export function Navbar({ onChangeText = () => {} }: INavbarProps) {
       <nav
         aria-hidden={!isOpen}
         className={twMerge(
-          'py-5 px-4 flex flex-col bg-light_gray_1 absolute transition-opacity top-0 bottom-0 left-0 right-0 h-screen overflow-hidden',
+          'z-30 py-5 px-4 flex flex-col bg-light_gray_1 fixed transition-opacity top-0 bottom-0 left-0 right-0 h-screen overflow-hidden',
           isOpen
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
