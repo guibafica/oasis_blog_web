@@ -69,6 +69,10 @@ npm install
 ```
 
 ```bash
+# Crie o .env na raiz do projeto duplicando o .env.example
+```
+
+```bash
 # (OPCIONAL) Para executar os testes
 npm run test
 ```
