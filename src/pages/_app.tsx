@@ -13,6 +13,24 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           name="description"
           content="Conectando você às últimas novidades e tendências."
         />
+
+        <meta property="og:title" content="OASIS Blog" />
+        <meta
+          property="og:description"
+          content="Conectando você às últimas novidades e tendências."
+        />
+        <meta property="og:image" content="/presentationImage.png" />
+        <meta property="og:url" content="https://oasis-blog.vercel.app/" />
+        <meta property="og:type" content="blog" />
+        <meta property="og:locale" content="pt_BR" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="OASIS Blog" />
+        <meta
+          name="twitter:description"
+          content="Conectando você às últimas novidades e tendências."
+        />
+        <meta name="twitter:image" content="/presentationImage.png" />
       </Head>
 
       <Component {...pageProps} />
