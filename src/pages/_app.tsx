@@ -2,11 +2,15 @@ import App, { AppContext, AppInitialProps, AppProps } from 'next/app'
 import { ApolloProvider } from '@apollo/client'
 import Head from 'next/head'
 
-import { client } from '../services/api-graphql'
+import { useApollo } from '../utils/apollo'
 
 import '../app/globals.css'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  // Cria o apollo com a opção de ser tanto SSR ou Client utilizando configurações
+  // de cache.
+  const client = useApollo(pageProps.initialApoloState)
+
   return (
     <>
       <ApolloProvider client={client}>

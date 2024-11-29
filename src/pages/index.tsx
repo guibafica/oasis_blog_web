@@ -8,7 +8,7 @@ import {
   reactjs
 } from '@/app/components/ArticleCard/mock'
 
-import { client } from '@/services/api-graphql'
+import { initializeApollo } from '@/utils/apollo'
 
 import { GET_LOCATIONS } from '@/graphql/locations/locationsQueries'
 
@@ -20,7 +20,9 @@ export async function getServerSideProps() {
   // SSR exemplo de implementação graphql.
   // Em um ambiente real, basta alterar para o backend do projeto, e enviar esses dados
   // para a pagina através das pros.
-  const { data } = await client.query({
+  const apolloClient = initializeApollo()
+
+  const { data } = await apolloClient.query({
     query: GET_LOCATIONS
   })
 
@@ -28,6 +30,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
+      initialApoloState: apolloClient.cache.extract(),
       categories: items,
       featured,
       css,
