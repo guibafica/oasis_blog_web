@@ -100,7 +100,7 @@ export function Article() {
                   </Typography>
 
                   <Typography
-                    className="ml-6 text-[#696A75]"
+                    className="ml-6 text-date_gray"
                     variant="paragraph_4"
                   >
                     {dayjs(new Date('2024-11-25T14:20:00Z')).format(
@@ -121,7 +121,7 @@ export function Article() {
                 />
 
                 <Typography
-                  className="font-merriweather text-lg font-normal mt-8 text-[#3b3c4a]"
+                  className="font-merriweather text-lg font-normal mt-8 text-darker_gray"
                   variant="paragraph_4"
                 >
                   Viajar é uma experiência enriquecedora que abre novos
@@ -134,7 +134,7 @@ export function Article() {
                 </Typography>
 
                 <Typography
-                  className="font-merriweather text-lg font-normal mt-8 text-[#3b3c4a]"
+                  className="font-merriweather text-lg font-normal mt-8 text-darker_gray"
                   variant="paragraph_4"
                 >
                   Um dos aspectos mais gratificantes de viajar é mergulhar na
@@ -146,14 +146,14 @@ export function Article() {
                 </Typography>
 
                 <Typography
-                  className="font-workSans text-xl font-semibold mt-8 text-[#181A2A]"
+                  className="font-workSans text-xl font-semibold mt-8 text-darkest_gray"
                   variant="paragraph_4"
                 >
                   Pesquise o seu destino
                 </Typography>
 
                 <Typography
-                  className="font-merriweather text-lg font-normal mt-4 text-[#3b3c4a]"
+                  className="font-merriweather text-lg font-normal mt-4 text-darker_gray"
                   variant="paragraph_4"
                 >
                   Antes de embarcar em sua viagem, reserve um tempo para
@@ -165,7 +165,7 @@ export function Article() {
                 </Typography>
 
                 <Typography
-                  className="font-merriweather text-lg font-normal mt-8 text-[#3b3c4a]"
+                  className="font-merriweather text-lg font-normal mt-8 text-darker_gray"
                   variant="paragraph_4"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -177,14 +177,14 @@ export function Article() {
                 </Typography>
 
                 <Typography
-                  className="font-workSans text-xl font-semibold mt-8 text-[#181A2A]"
+                  className="font-workSans text-xl font-semibold mt-8 text-darkest_gray"
                   variant="paragraph_4"
                 >
                   Planeje seu itinerário
                 </Typography>
 
                 <Typography
-                  className="font-merriweather text-lg font-normal mt-4 text-[#3b3c4a]"
+                  className="font-merriweather text-lg font-normal mt-4 text-darker_gray"
                   variant="paragraph_4"
                 >
                   Embora seja essencial deixar espaço para a espontaneidade e
@@ -197,7 +197,7 @@ export function Article() {
                 </Typography>
 
                 <Typography
-                  className="font-merriweather text-lg font-normal mt-8 text-[#3b3c4a]"
+                  className="font-merriweather text-lg font-normal mt-8 text-darker_gray"
                   variant="paragraph_4"
                 >
                   Vitae sapien pellentesque habitante morbi tristique. Luctus
@@ -206,9 +206,9 @@ export function Article() {
                   sodales ut etiam sit amet.
                 </Typography>
 
-                <div className="p-8 bg-[#F6F6F7] rounded-xl mt-8 border-l-4 border-[#e8e8e8]">
+                <div className="p-8 bg-quote_bg_gray rounded-xl mt-8 border-l-4 border-quote_border_gray">
                   <Typography
-                    className="font-merriweather text-xl font-normal italic text-[#181A2A]"
+                    className="font-merriweather text-xl font-normal italic text-darkest_gray"
                     variant="paragraph_4"
                   >
                     “ Viajar pode expô-lo a novos ambientes e potenciais riscos
@@ -228,14 +228,14 @@ export function Article() {
                 {texts.map((text, textIndex) => (
                   <div key={`${textIndex} - ${text}`}>
                     <Typography
-                      className="font-workSans text-xl font-semibold mt-8 text-[#181A2A]"
+                      className="font-workSans text-xl font-semibold mt-8 text-darkest_gray"
                       variant="paragraph_4"
                     >
                       {text?.title}
                     </Typography>
 
                     <Typography
-                      className="font-merriweather text-lg font-normal mt-4 text-[#3b3c4a]"
+                      className="font-merriweather text-lg font-normal mt-4 text-darker_gray"
                       variant="paragraph_4"
                     >
                       {text?.content}

@@ -60,7 +60,7 @@ export function Contact() {
 
                 <Typography
                   variant="paragraph_3_semi_bold"
-                  className="font-medium text-center mt-5 text-[#7a7a7a]"
+                  className="font-medium text-center mt-5 text-contact_gray"
                 >
                   Victoria Street, London, UK
                 </Typography>
@@ -102,7 +102,7 @@ export function Contact() {
 
                 <Typography
                   variant="paragraph_3_semi_bold"
-                  className="font-medium text-center mt-5 text-[#7a7a7a]"
+                  className="font-medium text-center mt-5 text-contact_gray"
                 >
                   hello@zarrin.cm
                 </Typography>
@@ -137,7 +137,7 @@ export function Contact() {
 
                 <Typography
                   variant="paragraph_3_semi_bold"
-                  className="font-medium text-center mt-5 text-[#7a7a7a]"
+                  className="font-medium text-center mt-5 text-contact_gray"
                 >
                   (001) 2342 3451
                 </Typography>

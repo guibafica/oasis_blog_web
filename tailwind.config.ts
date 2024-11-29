@@ -23,7 +23,14 @@ const config: Config = {
         yellow_hover: 'rgba(var(--yellow_hover))',
         disabled_border: 'rgba(var(--disabled_border))',
         disabled_background: 'rgba(var(--disabled_background))',
-        disabled_text: 'rgba(var(--disabled_text))'
+        disabled_text: 'rgba(var(--disabled_text))',
+
+        date_gray: 'rgba(var(--date_gray))',
+        darker_gray: 'rgba(var(--darker_gray))',
+        darkest_gray: 'rgba(var(--darkest_gray))',
+        quote_bg_gray: 'rgba(var(--quote_bg_gray))',
+        quote_border_gray: 'rgba(var(--quote_border_gray))',
+        contact_gray: 'rgba(var(--contact_gray))'
       }
     }
   },
