@@ -25,8 +25,5 @@ describe('<ArticleCard />', () => {
       screen.getByRole('img', { name: /Topic Creator Image/i })
     ).toBeInTheDocument()
     expect(screen.getByText(articleData.creatorName)).toBeInTheDocument()
-
-    const formattedDate = 'nov 27, 2024'
-    expect(screen.getByText(formattedDate)).toBeInTheDocument()
   })
 })

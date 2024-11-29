@@ -2,7 +2,7 @@ import Image from 'next/image'
 import dayjs from 'dayjs'
 import { twMerge } from 'tailwind-merge'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/compat/router'
 
 import { Navbar } from '../../app/components/Navbar'
 import { Container } from '../../app/components/Container'
