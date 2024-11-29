@@ -10,7 +10,7 @@ export type ITypographyProps = {
     | 'paragraph_2'
     | 'paragraph_3_semi_bold'
     | 'paragraph_4'
-  color?: 'black' | 'white' | 'dark_gray' | 'gray'
+  color?: 'black' | 'white' | 'dark_gray' | 'gray' | 'yellow'
   className?: string
 }
 
@@ -35,6 +35,7 @@ export function Typography({
         color === 'white' && 'text-white',
         color === 'dark_gray' && 'text-dark_gray',
         color === 'gray' && 'text-gray',
+        color === 'yellow' && 'text-yellow',
         className
       )}
     >
